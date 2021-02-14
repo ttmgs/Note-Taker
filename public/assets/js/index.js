@@ -3,6 +3,19 @@ const $noteText = $(".note-textarea");
 const $saveNoteBtn = $(".save-note");
 const $newNoteBtn = $(".new-note");
 const $noteList = $(".list-container .list-group");
+const express = require('express');
+const path = require('path');
+const app = express();
+const fs = require('fs');
+
+// creating the '/notes' route so it returns the notes.html file
+app.get('/notes', function(req, res) {  res.render('notes.html');});
+
+
+// GET `*` - Should return the `index.html` file
+app.get('*', function(req, res) {  res.render('index.html');});
+
+
 
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
