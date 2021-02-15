@@ -13,8 +13,11 @@ const config = require('db.json')
 app.get('/notes', function(req, res) {  res.render('notes.html');});
 
 
+
 // GET `*` - Should return the `index.html` file
 app.get('*', function(req, res) {  res.render('index.html');});
+
+
 
 //  `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
 
@@ -25,6 +28,8 @@ fs.readFile('db.json', 'utf8', (err, jsonString) => {
     }
     console.log('File data:', jsonString) 
 })
+
+
 
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
