@@ -9,15 +9,19 @@ const app = express();
 const fs = require('fs');
 const config = require('db.json')
 
+var PORT = process.env.PORT || 3001;
+
+app.listen(PORT, function() {
 // creating the '/notes' route so it returns the notes.html file
-app.get('/notes', function(req, res) {  res.render('notes.html');});
 
-
+app.get("/notes", function(req, res) {
+  res.json(path.join(__dirname, "notes.html"));
+});
 
 // GET `*` - Should return the `index.html` file
-app.get('*', function(req, res) {  res.render('index.html');});
-
-
+app.get("*", function(req, res) {
+  res.json(path.join(__dirname, "index.html"));
+});
 
 //  `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
 
@@ -176,3 +180,4 @@ $noteText.on("keyup", handleRenderSaveBtn);
 
 // Gets and renders the initial list of notes
 getAndRenderNotes();
+});
