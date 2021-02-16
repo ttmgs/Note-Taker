@@ -15,12 +15,12 @@ app.listen(PORT, function() {
 // creating the '/notes' route so it returns the notes.html file
 
 app.get("/notes", function(req, res) {
-  res.json(path.join(__dirname, "notes.html"));
+  res.json(path.join(__dirname, '/public', 'notes.html'));
 });
 
 // GET `*` - Should return the `index.html` file
 app.get("*", function(req, res) {
-  res.json(path.join(__dirname, "index.html"));
+  res.json(path.join(__dirname, '/public', 'index.html'));
 });
 
 //  `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
