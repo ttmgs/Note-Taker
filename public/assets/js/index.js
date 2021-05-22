@@ -1,37 +1,11 @@
+$( document ).ready(function() {
 const $noteTitle = $(".note-title");
 const $noteText = $(".note-textarea");
 const $saveNoteBtn = $(".save-note");
 const $newNoteBtn = $(".new-note");
 const $noteList = $(".list-container .list-group");
-const express = require('express');
-const path = require('path');
-const app = express();
-const fs = require('fs');
-const config = require('db.json')
 
-var PORT = process.env.PORT || 3001;
 
-app.listen(PORT, function() {
-// creating the '/notes' route so it returns the notes.html file
-
-app.get("/notes", function(req, res) {
-  res.json(path.join(__dirname, '/public', 'notes.html'));
-});
-
-// GET `*` - Should return the `index.html` file
-app.get("*", function(req, res) {
-  res.json(path.join(__dirname, '/public', 'index.html'));
-});
-
-//  `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
-
-fs.readFile('db.json', 'utf8', (err, jsonString) => {
-    if (err) {
-        console.log("File read failed:", err)
-        return
-    }
-    console.log('File data:', jsonString) 
-})
 
 
 
@@ -180,4 +154,7 @@ $noteText.on("keyup", handleRenderSaveBtn);
 
 // Gets and renders the initial list of notes
 getAndRenderNotes();
+
+
+
 });
