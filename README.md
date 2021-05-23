@@ -2,6 +2,9 @@
 
 ## Description
  This website app allows a user to write and delete notes onto the webpage
+ 
+ ## Screenshot
+ ![Screen shot of deployed application](/screenshot.png?raw=true "Optional Title")
 
 ## Usage
 
