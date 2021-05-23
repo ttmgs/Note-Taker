@@ -15,7 +15,7 @@ module.exports = (app) => {
     });
 
     // setting up the /api/notes post route
-    app.post("/api/notes:", (req, res) => {
+    app.post("/api/notes", (req, res) => {
       let newNote = req.body;
       notes.push(newNote);
       updateDb();
