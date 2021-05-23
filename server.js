@@ -1,7 +1,5 @@
 const path = require('path');
-const fs = require('fs');
 const express = require('express');
-const db = require('./db/db.json');
 
 // setting the express app & port
 const app = express();
@@ -17,7 +15,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 
 // requiring the api requests file (post, get, delete)
-require('./routes/api-routes');
+require('./routes/api-routes')(app);
 
 
 // listening port
