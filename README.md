@@ -10,8 +10,8 @@
 - npm install
 - run node server.js
 
-### you can view the webpage live on here
--(soon)
+### Live on Heroku
+https://thenote-taker1.herokuapp.com/
 
 ## Technologies Used
 - Jquery
