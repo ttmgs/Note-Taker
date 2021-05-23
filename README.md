@@ -7,6 +7,7 @@
  ![Screen shot of deployed application](/screenshot.png?raw=true "Optional Title")
 
 ## Usage
+To add a note click the pencil icon at the top right corner then write the title and note that youd like to add.
 
 ### clone repository
 - open terminal
