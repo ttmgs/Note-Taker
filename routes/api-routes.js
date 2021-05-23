@@ -1,6 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 
+
 module.exports = (app) => {
   // setting up the /api/notes route and the notes variable
   fs.readFile("./db/db.json", "utf8", (err, data) => {
