@@ -2,9 +2,11 @@ const path = require('path');
 const fs = require('fs');
 const express = require('express');
 const db = require('./db/db.json');
-const e = require('express');
 
+
+// express app
 const app = express();
+// port
 var PORT = process.env.PORT || 3001;
 
 // json data parsing
@@ -21,6 +23,11 @@ app.get('/api/notes', (req, res) => {
   res.send(db)
 })
 
+// get request to return index.html file
+
+app.get('/*',(req,res) => {
+   res.sendFile(path.join(__dirname,'./public/index.html'));
+});
 
 
 
@@ -57,13 +64,13 @@ app.delete( `/api/notes/:id`, (req, res) => {
 
 
 //  `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
-fs.readFile('db.json', 'utf8', (err, jsonString) => {
-  if (err) {
-      console.log("File read failed:", err)
-      return
-  }
-  console.log('File data:', jsonString) 
-})
+// fs.readFile(__dirname, '/db', 'db.json'), (err, jsonString) => {
+//   if (err) {
+//       console.log("File read failed:", err)
+//       return
+//   }
+//   console.log('File data:', jsonString) 
+// })
 
 
 
